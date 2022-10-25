@@ -1,11 +1,11 @@
 .form-area {
-  width: 50% !important;
+  width: 100%;
 }
 form {
-  width: 100f%;
+  width: 100%;
   margin: 60px auto;
   background: blueviolet;
-  padding: 60px 120px 80px 120px;
+  padding: 30px 120px 45px 120px;
   text-align: center;
   -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
@@ -60,7 +60,7 @@ label {
   top: -3em;
 }
 
-button {
+.buttons {
   display: inline-block;
   padding: 12px 24px;
   background: rgb(220, 220, 220);
@@ -68,12 +68,25 @@ button {
   color: rgb(120, 120, 120);
   border: none;
   outline: none;
-  border-radius: 3px;
   cursor: pointer;
   transition: ease 0.3s;
+  border-radius: 5px;
 }
 
-button:hover {
-  background: #8bc34a;
+.buttons:hover {
+  background: rgba(169, 93, 240, 0.478);
   color: #ffffff;
+}
+.auth-buttons {
+  width: 40px;
+  height: 40px;
+  background-color: white !important;
+  color: blueviolet !important;
+  padding: 0px !important;
+  text-align: center;
+  font-size: 22px !important;
+}
+.auth-buttons:hover {
+  color: white !important;
+  background-color: transparent !important;
 }

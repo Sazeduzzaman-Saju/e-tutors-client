@@ -3,7 +3,7 @@ import './Header.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { FaSignInAlt } from 'react-icons/fa';
 import logo from '../../assets/logo.png'
 
@@ -17,7 +17,7 @@ const Header = () => {
                             <p>Keep learning with free resources</p>
                         </div>
                         <div className='col d-flex justify-content-end'>
-                            <Nav.Link as={NavLink} to="/login"><FaSignInAlt /><span className='ms-2'>Login</span></Nav.Link>
+                            <Nav.Link as={Link} to="/login"><FaSignInAlt /><span className='ms-2'>Login</span></Nav.Link>
                         </div>
                     </div>
                 </div>
