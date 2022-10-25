@@ -61,6 +61,15 @@ p {
 }
 
 .relax {
+  background-image: url("../../assets/relax.png");
+  /* Set a specific height */
+  min-height: 300px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   --bs-gutter-x: 0rem !important;
   --bs-gutter-y: 0 !important;
 }

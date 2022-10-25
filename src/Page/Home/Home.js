@@ -142,10 +142,12 @@ const Home = () => {
             </section>
 
             <section>
-                <div className='container-fluid relax'>
-                    <img src={Relax} alt="" className='w-100' />
+                <div className='container-fluid relax d-flex justify-content-center'>
+                    <div className='container d-flex justify-content-center align-items-center '>
+                        <h1 className='text-center text-white'>Be A Member Of Etutors Business <br /> Start Earning Limitless Today</h1>
+                    </div>
                 </div>
-            </section>
+            </section >
             <section>
                 <div className='container mb-5 mt-5'>
                     <div className='row d-flex justify-content-center align-items-center'>
@@ -163,7 +165,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </div >
     );
 };
 
