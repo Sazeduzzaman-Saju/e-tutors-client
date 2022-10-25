@@ -7,6 +7,7 @@ import Home from "../Page/Home/Home";
 import Register from "../Page/Login/Register";
 import Login from '../Page/Login/Login'
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
+import Terms from "../Page/Others/Terms";
 
 
 export const routes = createBrowserRouter([
@@ -37,6 +38,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />,
+            },
+            {
+                path: '/terms',
+                element: <Terms />,
             },
         ]
     },

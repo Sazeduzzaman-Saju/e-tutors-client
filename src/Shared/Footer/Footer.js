@@ -10,17 +10,17 @@ const Footer = () => {
 
                 <section class="mb-4">
 
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                    ><FaFacebook /></a>
+                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    ><FaFacebook /></Link>
 
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                    ><FaInstagram /></a>
+                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    ><FaInstagram /></Link>
 
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                    ><FaTwitter /></a>
+                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    ><FaTwitter /></Link>
 
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                    ><FaGithub /></a>
+                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    ><FaGithub /></Link>
                 </section>
 
             </div>

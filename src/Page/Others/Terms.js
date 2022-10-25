@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Blog = () => {
+const Others = () => {
     return (
         <div>
             <div className="pages-banner-area ptb-100">
                 <div className="container">
                     <div className="pages-banner-content mt-5 mb-5">
-                        <h2 className='text-white text-center'>Blog</h2>
-                        <div className='breadcrumb d-flex justify-content-center'>
+                        <h2 className='text-white text-center' style={{ opacity: "1", transform: "none" }}>Terms &amp; Conditions</h2>
+                        <ul className='d-flex justify-content-center ' style={{ opacity: "1", transform: "none" }}>
                             <span><Link to={'/home'}>Home</Link></span>
                             <span><Link to={'/blog'}>Blog</Link></span>
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -19,4 +19,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default Others;

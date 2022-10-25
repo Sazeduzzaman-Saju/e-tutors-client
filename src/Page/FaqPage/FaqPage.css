@@ -1,0 +1,23 @@
+.pages-banner-area {
+  background: linear-gradient(
+    96.41deg,
+    rgba(137, 43, 226, 0.829) 10.61%,
+    rgba(137, 43, 226, 0.672) 70.66%
+  );
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.pages-banner-content ul {
+  text-decoration: none;
+}
+.pages-banner-content ul a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+.breadcrumb a {
+  text-decoration: none;
+  margin-left: 1rem;
+  color: white;
+}
