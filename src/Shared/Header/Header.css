@@ -15,3 +15,9 @@
 .btns:hover {
   background-color: rgba(137, 43, 226, 0.705) !important;
 }
+.navigation-area {
+  position: sticky;
+  top: 0;
+  padding: 0px !important;
+  z-index: 99 !important;
+}

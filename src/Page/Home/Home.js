@@ -2,7 +2,9 @@ import React from 'react';
 import './Home.css'
 import Banner from '../../assets/banner-img-1.png'
 import testimonial from '../../assets/testimonial-1.png'
+import Teaching from '../../assets/testimonial-1.png'
 import Member from '../../assets/business-img.png'
+import Relax from '../../assets/relax.png'
 import { Link, NavLink } from 'react-router-dom';
 import { FaArrowRight, FaMandalorian, FaConnectdevelop } from 'react-icons/fa';
 import { FcBusinessman, FcClock, FcAssistant } from "react-icons/fc";
@@ -98,7 +100,7 @@ const Home = () => {
                         </div>
                         <div className='col-lg-6 col-md-6 col-sm-1'>
                             <div className='testimonials-conetent'>
-                                <h1>Our Students Are Our Strength. See What They Say About Us</h1>
+                                <h1>Our Students Are Our Strength. <span className='fw-bold blueviolet'>They Say..</span></h1>
                             </div>
                             <Testimonial></Testimonial>
                         </div>
@@ -111,7 +113,7 @@ const Home = () => {
 
                         <div className='col-lg-6 col-md-6 col-sm-1'>
                             <div className='testimonials-conetent'>
-                                <h1>Become An Instructor Today And Start Teaching</h1>
+                                <h1>Become An Instructor Today And<span className='fw-bold blueviolet'> Start Teaching</span> </h1>
                                 <p>Instructors from around the world teach millions of students on Edmy. We provide the tools and skills to teach what you love. And you can also achieve your goal with us</p>
                             </div>
                             <div className='row d-flex justify-content-center align-items-center'>
@@ -133,9 +135,15 @@ const Home = () => {
                             <button className='btns mt-5'>Become An Instructor</button>
                         </div>
                         <div className='col-lg-6 col-md-6 col-sm-1'>
-                            <img className='img-fluid' src={testimonial} alt="" />
+                            <img className='img-fluid' src={Teaching} alt="" />
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section>
+                <div className='container-fluid relax'>
+                    <img src={Relax} alt="" className='w-100' />
                 </div>
             </section>
             <section>
