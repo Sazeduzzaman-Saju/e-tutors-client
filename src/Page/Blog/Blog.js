@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import blog from '../../assets/blog.jpg';
-import Iframe from 'react-iframe'
+import Iframe from 'react-iframe';
+import './Blog.css'
 
 const Blog = () => {
     return (
@@ -19,7 +20,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
-            <div className="container-fluid mt-5">
+            <section className="container-fluid mt-5">
                 <div className="container ">
                     <div className='d-flex justify-content-center align-items-center'>
                         <img className='w-50' src={blog} alt="" />
@@ -92,17 +93,22 @@ const Blog = () => {
                     </div>
 
                 </div>
+            </section>
+            <div>
+                <div className='text-center'>
+                    <h1>Follow Us On <br /><span className='blueviolet'>YouTube</span></h1>
+                </div>
             </div>
-            <div className="container-fluid mt-5 p-0 d-flex justify-content-center align-items-center">
+            <section className="container-fluid mt-5 p-0 d-flex justify-content-center align-items-center">
                 <Iframe url="https://www.youtube.com/embed/z05PS1qYu9I"
-                    width="500px"
+                    width="600px"
                     height="320px"
                     id=""
-                    className=""
+                    className="presentation-video"
                     display="block"
                     position="relative" />
-            </div>
-            <div className="container-fluid mt-5 p-0">
+            </section>
+            <section className="container-fluid mt-5 p-0">
 
                 <Iframe url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.792482872038!2d90.37337911429776!3d23.790402893165385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c734c4abc47d%3A0xd696584909ddf06f!2sShewraPara%20Bus%20Stand!5e0!3m2!1sen!2sbd!4v1666757511818!5m2!1sen!2sbd"
                     width="100%"
@@ -112,7 +118,7 @@ const Blog = () => {
                     className=""
                     display="block"
                     position="relative" />
-            </div>
+            </section>
         </div>
     );
 };

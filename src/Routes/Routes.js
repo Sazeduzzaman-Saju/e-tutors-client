@@ -8,6 +8,7 @@ import Register from "../Page/Login/Register";
 import Login from '../Page/Login/Login'
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Terms from "../Page/Others/Terms";
+import SingleCourseTitle from "../Shared/comps/SingleCourseTitle";
 
 
 export const routes = createBrowserRouter([
@@ -22,6 +23,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses />,
+                loader: () => fetch(`https://etutor-server.vercel.app/coursetitle`)
+            },
+            {
+                path: '/coursedetails/:id',
+                element: <SingleCourseTitle />,
+                loader: ({ params }) => fetch(`https://etutor-server.vercel.app/coursedetails/${params.id}`)
             },
             {
                 path: '/faq',

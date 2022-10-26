@@ -144,7 +144,7 @@ const Home = () => {
             <section>
                 <div className='container-fluid relax d-flex justify-content-center'>
                     <div className='container d-flex justify-content-center align-items-center '>
-                        <h1 className='text-center text-white'>Be A Member Of Etutors Business <br /> Start Earning Limitless Today</h1>
+                        <h1 className='text-center text-white'>Be A Member Of Etutors Platform <br /> Start Learning Today</h1>
                     </div>
                 </div>
             </section >
