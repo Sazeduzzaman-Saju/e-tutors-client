@@ -21,3 +21,26 @@
   margin-left: 1rem;
   color: white;
 }
+
+.accordion-button {
+  background-color: blueviolet !important;
+  color: white !important;
+  box-shadow: 0px;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white !important;
+}
+
+button:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+.accordion-div {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .accordion-div {
+    width: 100% !important;
+  }
+}

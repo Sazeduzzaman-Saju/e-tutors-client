@@ -18,3 +18,16 @@ hr {
   margin: auto !important;
   border: 2px solid white !important;
 }
+
+body::-webkit-scrollbar {
+  width: 0.666rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px blueviolet;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: blueviolet;
+  outline: 1px solid blueviolet;
+}
