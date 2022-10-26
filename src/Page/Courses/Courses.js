@@ -12,8 +12,8 @@ const Courses = () => {
             .then(res => res.json())
             .then(data => setCourseTitle(data))
     }, [])
+
     const coursesTitle = useLoaderData();
-    console.log(coursesTitle);
     return (
         <div>
             <div className="pages-banner-area ptb-100">

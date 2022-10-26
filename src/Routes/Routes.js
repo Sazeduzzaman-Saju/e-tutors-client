@@ -9,6 +9,7 @@ import Login from '../Page/Login/Login'
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Terms from "../Page/Others/Terms";
 import SingleCourseTitle from "../Shared/comps/SingleCourseTitle";
+import CheckOutePage from "../Page/CheckOutPage/CheckOutePage";
 
 
 export const routes = createBrowserRouter([
@@ -49,6 +50,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/terms',
                 element: <Terms />,
+            },
+            {
+                path: '/checkout/:id',
+                element: <CheckOutePage />,
+                loader: ({ params }) => fetch(`https://etutor-server.vercel.app/checkout/${params.id}`)
+
             },
         ]
     },
