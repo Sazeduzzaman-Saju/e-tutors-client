@@ -1,23 +1,58 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, Link } from 'react-router-dom';
-import { FaSignInAlt } from 'react-icons/fa';
+import { FaSignInAlt, FaUser } from 'react-icons/fa';
 import logo from '../../assets/logo.png'
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { Image } from 'react-bootstrap';
+
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext);
+
+
+    const logOut = () => {
+        logout()
+            .then(() => { })
+            .catch(e => console.error(e))
+    }
     return (
         <>
             <div className='container-fluid top-banner'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col'>
+                <div className='container-fluid'>
+                    <div className='row d-flex justify-content-center align-content-center'>
+                        <div className='col '>
                             <p>Keep learning with free resources</p>
                         </div>
-                        <div className='col d-flex justify-content-end'>
-                            <Nav.Link as={Link} to="/login"><FaSignInAlt /><span className='ms-2'>Login</span></Nav.Link>
+                        <div className='col d-flex justify-content-end align-content-center'>
+                            <Link>
+                                {user?.uid ?
+                                    <>
+                                        <span>{user?.displayName}</span>
+                                        <button onClick={logOut}>LogOut</button>
+                                    </>
+                                    :
+                                    <>
+                                        <Nav.Link as={Link} className='ms-3' to="/login"><FaSignInAlt /><span className='ms-2'>Login</span></Nav.Link>
+                                    </>
+                                }
+                            </Link>
+                            <Link to='/profile' className='ms-3'>
+                                {user?.photoURL ?
+                                    <Image
+                                        style={{ height: '40px' }}
+                                        roundedCircle
+                                        src={user.photoURL}>
+
+                                    </Image>
+                                    :
+                                    <FaUser></FaUser>
+                                }
+                            </Link>
+
                         </div>
                     </div>
                 </div>

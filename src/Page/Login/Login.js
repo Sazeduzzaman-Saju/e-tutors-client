@@ -1,10 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import loginBg from '../../assets/register-img.png';
 import { FaFacebook, FaGoogle, FaGithub } from 'react-icons/fa';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
+    const Navigate = useNavigate();
+    const [error, setError] = useState();
+    const { signIn } = useContext(AuthContext);
+    const location = useLocation()
+
+    const from = location.state?.from?.pathName || '/';
+
+    const handleLoginIN = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                setError('')
+                Navigate(from, { replace: true })
+
+            })
+            .catch(e => {
+                console.log(e)
+                setError(e.message)
+            })
+
+    }
     return (
         <div>
             <div className="pages-banner-area ptb-100">
@@ -26,22 +54,26 @@ const Login = () => {
                             <img className='' src={loginBg} alt="" />
                         </div>
                         <div className='col-lg-6 col-sm-1 col-md-6 form-area'>
-                            <form>
+                            <form onSubmit={handleLoginIN}>
                                 <label>
                                     <p class="label-txt">ENTER YOUR EMAIL</p>
-                                    <input type="text" class="input" />
+                                    <input name="email" type="email" class="input" />
                                     <div class="line-box">
                                         <div class="line"></div>
                                     </div>
                                 </label>
                                 <label>
                                     <p class="label-txt">ENTER YOUR PASSWORD</p>
-                                    <input type="text" class="input" />
+                                    <input name="password" type="password" class="input" />
                                     <div class="line-box">
                                         <div class="line"></div>
                                     </div>
                                 </label>
-                                <button type="submit" className='buttons'>submit</button>
+                                <button type="submit" className='buttons'>submit</button><br />
+                                <div>
+                                    {error}
+                                </div>
+
                                 <p className='text-white mt-2'>Not a member? <Link to="/register">Register</Link></p>
                                 <p className='text-white'>or sign up with:</p>
                                 <div className='d-flex justify-content-center align-items-center mt-2'>

@@ -10,6 +10,7 @@ import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Terms from "../Page/Others/Terms";
 import SingleCourseTitle from "../Shared/comps/SingleCourseTitle";
 import CheckOutePage from "../Page/CheckOutPage/CheckOutePage";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 
 export const routes = createBrowserRouter([
@@ -18,12 +19,16 @@ export const routes = createBrowserRouter([
         element: <LayoutProvider />,
         children: [
             {
+                path: '/',
+                element: <Home />,
+            },
+            {
                 path: '/home',
                 element: <Home />,
             },
             {
                 path: '/courses',
-                element: <Courses />,
+                element: <PrivateRoutes><Courses /></PrivateRoutes>,
                 loader: () => fetch(`https://etutor-server.vercel.app/coursetitle`)
             },
             {
@@ -37,7 +42,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <Blog />,
+                element: <PrivateRoutes><Blog /></PrivateRoutes>,
             },
             {
                 path: '/login',

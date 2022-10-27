@@ -1,4 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
+import AuthProvider from './context/AuthProvider/AuthProvider';
 import { routes } from './Routes/Routes';
 
 
@@ -6,7 +7,10 @@ import { routes } from './Routes/Routes';
 function App() {
   return (
     <>
-      <RouterProvider router={routes}></RouterProvider>
+      <AuthProvider>
+        <RouterProvider router={routes}>
+        </RouterProvider>
+      </AuthProvider>
     </>
   );
 }

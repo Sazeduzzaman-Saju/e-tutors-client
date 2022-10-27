@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const CourseSideInfo = ({ courseDetails }) => {
     const { catId,
-        title,
         latest_price,
         access_time,
         enrolments,
@@ -20,7 +19,7 @@ const CourseSideInfo = ({ courseDetails }) => {
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
                     <div className="d-flex justify-content-between align-items-center mb-3">
-                        <span> <strong className='fs-2'>${latest_price}</strong> ${before_price}</span>
+                        <span> <strong className='fs-2'>${latest_price}</strong> <del>${before_price}</del></span>
                         <p>Offer for today</p>
                     </div>
                     <di className="d-flex justify-content-between">

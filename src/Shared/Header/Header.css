@@ -5,12 +5,20 @@
 .active {
   color: blueviolet !important;
 }
+.courses-btn {
+  width: 100% !important;
+}
 .btns {
   color: white;
   padding: 10px 20px;
   background-color: blueviolet !important;
   border-radius: 5px;
   border: none;
+  transition: 0.5s ease;
+  text-decoration: none !important;
+}
+.btns a {
+  text-decoration: none !important;
 }
 .btns:hover {
   background-color: rgba(137, 43, 226, 0.705) !important;
@@ -20,4 +28,8 @@
   top: 0;
   padding: 0px !important;
   z-index: 99 !important;
+}
+.courses-hr {
+  width: 30px;
+  border: 2px solid ;
 }

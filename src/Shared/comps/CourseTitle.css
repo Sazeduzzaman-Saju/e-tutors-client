@@ -3,3 +3,13 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0.255rem;
 }
+.title-cards {
+  color: blueviolet;
+  text-decoration: none;
+  border: 0px !important;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.sider-title {
+  position: sticky;
+  top: 5rem;
+}
