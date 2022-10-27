@@ -90,3 +90,17 @@ label {
   color: white !important;
   background-color: transparent !important;
 }
+
+.submitBTN {
+  background-color: white;
+  border: 0px !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.user-title a {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}

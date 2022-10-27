@@ -8,9 +8,10 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
 
 const Register = () => {
-    const { googleLoginProvider, createNewUser } = useContext(AuthContext);
+    const { googleLoginProvider, createNewUser, updateUser } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const [error, setError] = useState();
+    const [check, setChecked] = useState(false);
 
     const handleGoogleLogin = () => {
         googleLoginProvider(googleProvider)
@@ -24,22 +25,40 @@ const Register = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const photoUrl = form.photoUrl.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        const confirmPassword = form.confirmPassword.value;
 
         createNewUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
                 setError('')
-                form.reset()
+                form.reset();
+                updateUserProfile(name, photoURL)
             })
             .catch(e => {
                 console.error(e);
                 setError(e.message)
             })
+    }
+    const updateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUser(profile)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(e => {
+                console.error(e);
+                setError(e.message)
+            })
+    }
+    const handleChecked = (event) => {
+        setChecked(event.target.checked)
     }
     return (
         <div>
@@ -72,7 +91,7 @@ const Register = () => {
                                 </label>
                                 <label>
                                     <p class="label-txt">ENTER YOUR PHOTO URL</p>
-                                    <input name='photoUrl' type="text" class="input" />
+                                    <input name='photoURL' type="text" class="input" />
                                     <div class="line-box">
                                         <div class="line"></div>
                                     </div>
@@ -91,14 +110,14 @@ const Register = () => {
                                         <div class="line"></div>
                                     </div>
                                 </label>
-                                <label>
-                                    <p class="label-txt">ENTER YOUR CONFIRM PASSWORD</p>
-                                    <input name='confirmPassword' type="password" class="input" required />
-                                    <div class="line-box">
-                                        <div class="line"></div>
-                                    </div>
-                                </label>
-                                <button type="submit" className='buttons'>submit</button>
+                                <div class="form-check text-white">
+                                    <input onClick={handleChecked} class="form-check-input" type="checkbox" value="" />
+
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        <>Check Our <Link to='/terms'>Terms & Condition</Link></>
+                                    </label>
+                                </div>
+                                <button type="submit" className='submitBTN' disabled={!check}>SUBMIT</button>
                                 <div>
                                     {error}
                                 </div>

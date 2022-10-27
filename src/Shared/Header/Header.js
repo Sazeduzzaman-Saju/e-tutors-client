@@ -8,6 +8,8 @@ import { FaSignInAlt, FaUser } from 'react-icons/fa';
 import logo from '../../assets/logo.png'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 
 const Header = () => {
@@ -19,39 +21,49 @@ const Header = () => {
             .then(() => { })
             .catch(e => console.error(e))
     }
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            {user?.displayName}
+        </Tooltip>)
     return (
+
         <>
+
             <div className='container-fluid top-banner'>
                 <div className='container-fluid'>
                     <div className='row d-flex justify-content-center align-content-center'>
                         <div className='col '>
                             <p>Keep learning with free resources</p>
                         </div>
-                        <div className='col d-flex justify-content-end align-content-center'>
-                            <Link>
+                        <div className='user-title col d-flex justify-content-end '>
+                            <Link className=''>
                                 {user?.uid ?
                                     <>
-                                        <span>{user?.displayName}</span>
-                                        <button onClick={logOut}>LogOut</button>
+                                        <span className=''>{user?.displayName}</span>
                                     </>
                                     :
                                     <>
-                                        <Nav.Link as={Link} className='ms-3' to="/login"><FaSignInAlt /><span className='ms-2'>Login</span></Nav.Link>
+                                        <Nav.Link as={Link} className='ms-3 btns' to="/login">
+                                            <FaSignInAlt /><span className='ms-2 '><button className="btns">Login</button></span></Nav.Link>
                                     </>
                                 }
                             </Link>
-                            <Link to='/profile' className='ms-3'>
-                                {user?.photoURL ?
-                                    <Image
-                                        style={{ height: '40px' }}
-                                        roundedCircle
-                                        src={user.photoURL}>
+                            <OverlayTrigger
+                                placement="bottom"
+                                delay={{ show: 250, hide: 400 }}
+                                overlay={renderTooltip}><Link to='/profile' className='ms-3'>
+                                    {user?.photoURL ?
+                                        <Image
+                                            style={{ height: '40px', width: '40px' }}
+                                            roundedCircle
+                                            src={user.photoURL}>
 
-                                    </Image>
-                                    :
-                                    <FaUser></FaUser>
-                                }
-                            </Link>
+                                        </Image>
+                                        :
+                                        <FaUser></FaUser>
+                                    }
+                                </Link></OverlayTrigger>
+
 
                         </div>
                     </div>
@@ -78,9 +90,18 @@ const Header = () => {
 
                             </Nav>
                             <div>
-                                <Nav.Link as={NavLink} to="/register">
-                                    <button className="btns">Register Now</button>
-                                </Nav.Link>
+                                {user?.uid ?
+                                    <>
+                                        <button className='btns' onClick={logOut}>LogOut</button>
+                                    </>
+                                    :
+                                    <>
+                                        <Nav.Link as={NavLink} to="/register">
+                                            <button className="btns">Register Now</button>
+                                        </Nav.Link>
+                                    </>
+                                }
+
                             </div>
                         </Navbar.Collapse>
                     </Container>
