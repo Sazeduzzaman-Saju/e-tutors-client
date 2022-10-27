@@ -28,7 +28,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <PrivateRoutes><Courses /></PrivateRoutes>,
+                element: <Courses />,
                 loader: () => fetch(`https://etutor-server.vercel.app/coursetitle`)
             },
             {
@@ -58,7 +58,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <CheckOutePage />,
+                element: <PrivateRoutes><CheckOutePage /></PrivateRoutes>,
                 loader: ({ params }) => fetch(`https://etutor-server.vercel.app/checkout/${params.id}`)
 
             },

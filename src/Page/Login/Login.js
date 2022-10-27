@@ -24,7 +24,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('')
-                Navigate(from, { replace: true })
+                Navigate(from, { replace: true } || '/')
 
             })
             .catch(e => {
