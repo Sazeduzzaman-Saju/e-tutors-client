@@ -19,12 +19,12 @@ import Testimonial from '../../Shared/Testimonial/Testimonial';
 const Home = () => {
     return (
         <div className=''>
-            <section className='container mb-5'>
-                <div className='row d-flex justify-content-center align-items-center'>
+            <section className='container mb-5' >
+                <div className='row d-flex justify-content-center align-items-center ' data-aos="fade-left" data-aos-duration="3000">
                     <div className='col-lg-6 col-md-6 col-sm-1 mt-5 pt-5'>
                         <img className='img-fluid' src={Banner} alt="" />
                     </div>
-                    <div className='col-lg-6 col-md-6 col-sm-1 mt-5'>
+                    <div className='col-lg-6 col-md-6 col-sm-1 mt-5' data-aos="fade-left" data-aos-duration="3000">
                         <div className='banner-details'>
                             <h1>Improve Your Online Learning Experience <br /> Better Instantly</h1>
                             <p>We have <span style={{ color: 'blueviolet' }}>40k+</span> Online courses & <span style={{ color: 'blueviolet' }}>500K+</span> Online registered student. Find your desired Courses from them</p>
@@ -40,12 +40,12 @@ const Home = () => {
             </section>
             <section className='container-fluid bg-light mb-5 '>
                 <div className='container pt-5'>
-                    <div className='text-center '>
+                    <div className='text-center ' data-aos="fade-left" data-aos-duration="3000">
                         <p style={{ color: 'blueviolet', fontWeight: "bold" }}>Our Features</p>
                         <h3>Why You Should Choose Edmy</h3>
                     </div>
                     <div className='row d-flex justify-content-center align-items-center mt-5 pb-5'>
-                        <div className='col-lg-3 col-md-3 col-sm-1 '>
+                        <div className='col-lg-3 col-md-3 col-sm-1 ' data-aos="fade-left" data-aos-duration="3000">
                             <Card className="p-1 feature-cards">
                                 <Card.Img variant="top" className="ms-3" style={{ width: "100px" }} src={icon1} />
                                 <Card.Body>
@@ -56,7 +56,7 @@ const Home = () => {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className='col-lg-3 col-md-3 col-sm-1 '>
+                        <div className='col-lg-3 col-md-3 col-sm-1 ' data-aos="fade-left" data-aos-duration="3000">
                             <Card className="p-1 feature-cards">
                                 <Card.Img variant="top" className="ms-2" style={{ width: "100px" }} src={icon2} />
                                 <Card.Body>
@@ -67,7 +67,7 @@ const Home = () => {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className='col-lg-3 col-md-3 col-sm-1 '>
+                        <div className='col-lg-3 col-md-3 col-sm-1 ' data-aos="fade-left" data-aos-duration="3000">
                             <Card className="p-1 feature-cards">
                                 <Card.Img variant="top" className="ms-1" style={{ width: "100px" }} src={icon3} />
                                 <Card.Body>
@@ -78,7 +78,7 @@ const Home = () => {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className='col-lg-3 col-md-3 col-sm-1 '>
+                        <div className='col-lg-3 col-md-3 col-sm-1 ' data-aos="fade-left" data-aos-duration="3000">
                             <Card className="p-1 feature-cards">
                                 <Card.Img variant="top" className="ms-1" style={{ width: "100px" }} src={icon4} />
                                 <Card.Body>
@@ -93,7 +93,7 @@ const Home = () => {
                 </div>
             </section>
             <section>
-                <div className='container mb-5 mt-5'>
+                <div className='container mb-5 mt-5' data-aos="fade-left" data-aos-duration="3000">
                     <div className='row d-flex justify-content-center align-items-center'>
                         <div className='col-lg-6 col-md-6 col-sm-1'>
                             <img className='img-fluid' src={testimonial} alt="" />
@@ -108,7 +108,7 @@ const Home = () => {
                 </div>
             </section>
             <section>
-                <div className='container mb-5 mt-5'>
+                <div className='container mb-5 mt-5' data-aos="fade-left" data-aos-duration="3000">
                     <div className='row d-flex justify-content-center align-items-center'>
 
                         <div className='col-lg-6 col-md-6 col-sm-1'>
@@ -134,7 +134,7 @@ const Home = () => {
                             </div>
                             <button className='btns mt-5'>Become An Instructor</button>
                         </div>
-                        <div className='col-lg-6 col-md-6 col-sm-1'>
+                        <div className='col-lg-6 col-md-6 col-sm-1' data-aos="fade-left" data-aos-duration="3000">
                             <img className='img-fluid' src={Teaching} alt="" />
                         </div>
                     </div>
@@ -142,19 +142,19 @@ const Home = () => {
             </section>
 
             <section>
-                <div className='container-fluid relax d-flex justify-content-center'>
+                <div className='container-fluid relax d-flex justify-content-center' data-aos="fade-left" data-aos-duration="3000">
                     <div className='container d-flex justify-content-center align-items-center '>
                         <h1 className='text-center text-white'>Be A Member Of Etutors Platform <br /> Start Learning Today</h1>
                     </div>
                 </div>
             </section >
             <section>
-                <div className='container mb-5 mt-5'>
+                <div className='container mb-5 mt-5' data-aos="fade-left" data-aos-duration="3000">
                     <div className='row d-flex justify-content-center align-items-center'>
                         <div className='col-lg-6 col-md-6 col-sm-1'>
                             <img className='img-fluid' src={Member} alt="" />
                         </div>
-                        <div className='col-lg-6 col-md-6 col-sm-1'>
+                        <div className='col-lg-6 col-md-6 col-sm-1' data-aos="fade-left" data-aos-duration="3000">
                             <div className='testimonials-conetent'>
                                 <h1>Be A Member Of Etutors Business & Start Earning Limitless Today</h1>
                                 <p>Instructors from around the world teach millions of students on Etutors. We provide the tools and skills to teach what you love. And you can also achieve your goal with us.</p>

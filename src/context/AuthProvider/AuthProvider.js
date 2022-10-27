@@ -8,11 +8,18 @@ export const AuthContext = createContext();
 const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
-
     const [user, setUser] = useState(null);
     const [load, setLoad] = useState(true);
 
     const googleLoginProvider = (provider) => {
+        setLoad(false)
+        return signInWithPopup(auth, provider)
+    }
+    const gitLoginProvider = (provider) => {
+        setLoad(false)
+        return signInWithPopup(auth, provider)
+    }
+    const facebookProvider = (provider) => {
         setLoad(false)
         return signInWithPopup(auth, provider)
     }
@@ -44,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-    const authDetails = { user, googleLoginProvider, logout, createNewUser, signIn, load, updateUser }
+    const authDetails = { user, googleLoginProvider, logout, createNewUser, signIn, load, updateUser, gitLoginProvider, facebookProvider }
     return (
         <AuthContext.Provider value={authDetails}>
             {children}

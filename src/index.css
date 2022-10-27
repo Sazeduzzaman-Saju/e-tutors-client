@@ -31,3 +31,33 @@ body::-webkit-scrollbar-thumb {
   background-color: blueviolet;
   outline: 1px solid blueviolet;
 }
+.accordion {
+  width: 50% !important;
+}
+
+.card-text:last-child {
+  margin-bottom: -5px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  p {
+    font-size: 12px !important;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  .banner-details h1 {
+    font-size: 40px !important;
+
+    line-height: 40px !important;
+  }
+  .feature-cards {
+    margin-bottom: 10px;
+  }
+  .sider-title {
+    position: relative !important;
+    top: 0rem !important;
+  }
+  .accordion {
+    width: 100% !important;
+  }
+}

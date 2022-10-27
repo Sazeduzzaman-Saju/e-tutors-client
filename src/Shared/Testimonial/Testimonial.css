@@ -32,3 +32,6 @@
 .owl-theme .owl-dots .owl-dot span {
   display: none !important;
 }
+.item p {
+  text-align: justify;
+}

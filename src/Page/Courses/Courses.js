@@ -16,7 +16,7 @@ const Courses = () => {
     const coursesTitle = useLoaderData();
     return (
         <div>
-            <div className="pages-banner-area ptb-100">
+            <div className="pages-banner-area ptb-100" data-aos="fade-left" data-aos-duration="1000">
                 <div className="container">
                     <div className="pages-banner-content mt-5 mb-5">
                         <h2 className='text-white text-center'>Courses</h2>
@@ -32,20 +32,20 @@ const Courses = () => {
             <section>
                 <div className='container mt-5 mb-5' sticky="top">
                     <div className='row' >
-                        <div className='col-lg-4 col-md-4 bg-light sider-title' >
+                        <div className='col-lg-4 col-md-4 bg-light sider-title' data-aos="fade-left" data-aos-duration="2000">
                             <div className='sider-title'>
-                                <h3 className='mb-3 text-center mb-5'>Total Course 0{courseTitle.length}</h3>
+                                <h3 className='mb-3 text-center mb-5'>Total Course <span className='blueviolet'>0{courseTitle.length}</span></h3>
                                 <hr className='courses-hr' />
                                 <div className=''>
                                     {
                                         courseTitle.map(title => <p key={title.id} className="text-center" >
-                                            <Link className='title-cards text-center' to={`/coursedetails/${title.id}`}>{title.name.slice(0, 35)}..</Link></p>)
+                                            <Link className='title-cards text-center' to={`/coursedetails/${title.id}`}><button className='btns' style={{ width: "100%" }}>{title.name.slice(0, 35)}..</button></Link></p>)
                                     }
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-8 col-md-8 col-sm-1 '>
-                            <div className='course-title-container'>
+                        <div className='col-lg-8 col-md-8 col-sm-1 ' >
+                            <div className='course-title-container' data-aos="fade-left" data-aos-duration="3000">
                                 {coursesTitle.map(titles => <CourseTitle key={titles.id} titles={titles}></CourseTitle>)}
                             </div>
                         </div>

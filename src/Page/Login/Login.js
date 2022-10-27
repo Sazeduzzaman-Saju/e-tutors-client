@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import loginBg from '../../assets/register-img.png';
-import { FaFacebook, FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import SocialAuth from '../../Shared/comps/SocialAuth';
 
 const Login = () => {
     const Navigate = useNavigate();
@@ -70,24 +70,14 @@ const Login = () => {
                                     </div>
                                 </label>
                                 <button type="submit" className='buttons'>submit</button><br />
-                                <div>
+                                <div className='text-white'>
                                     {error}
                                 </div>
 
-                                <p className='text-white mt-2'>Not a member? <Link to="/register">Register</Link></p>
+                                <p className='text-white mt-2'><small>Not a member?</small> <Link className='text-white' to="/register">Register</Link></p>
                                 <p className='text-white'>or sign up with:</p>
                                 <div className='d-flex justify-content-center align-items-center mt-2'>
-                                    <section class="mb-4">
-
-                                        <Link id='active' class="btn btn-outline-light auth-buttons btn-floating m-1" to="/#" role="button"
-                                        ><FaFacebook /></Link>
-
-                                        <Link id='active' class="btn btn-outline-light auth-buttons btn-floating m-1" to="/#" role="button"
-                                        ><FaGoogle /></Link>
-
-                                        <Link id='active' class="btn btn-outline-light auth-buttons btn-floating m-1" to="/#" role="button"
-                                        ><FaGithub /></Link>
-                                    </section>
+                                    <SocialAuth></SocialAuth>
                                 </div>
 
                             </form>

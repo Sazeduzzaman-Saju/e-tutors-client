@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
-        <div>
-            <section className='container mt-5'>
+        <div className='errors-areas'>
+            <section className='container mt-5 errors-area'>
                 <div className='row error-massage'>
                     <div className='col' data-aos="fade-up-left" data-aos-duration="1500">
                         <img src={ErrorImage} alt="" />

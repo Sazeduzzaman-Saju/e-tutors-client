@@ -2,25 +2,15 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import loginBg from '../../assets/register-img.png';
-import { FaFacebook, FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
+import SocialAuth from '../../Shared/comps/SocialAuth';
 
 const Register = () => {
-    const { googleLoginProvider, createNewUser, updateUser } = useContext(AuthContext);
-    const googleProvider = new GoogleAuthProvider();
+    const { createNewUser, updateUser, } = useContext(AuthContext);
     const [error, setError] = useState();
     const [check, setChecked] = useState(false);
 
-    const handleGoogleLogin = () => {
-        googleLoginProvider(googleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user)
-            })
-            .catch(e => console.error(e))
-    }
     const handleRegisterSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -124,17 +114,8 @@ const Register = () => {
                                 <p className='text-white mt-2'>All Ready Have Account? <Link to="/login">Login</Link></p>
                                 <p className='text-white'>or sign up with:</p>
                                 <div className='d-flex justify-content-center align-items-center mt-2'>
-                                    <section class="mb-4">
 
-                                        <Link class="btn btn-outline-light auth-buttons btn-floating m-1" to="/#" role="button"
-                                        ><FaFacebook /></Link>
-
-                                        <Link onClick={handleGoogleLogin} class="btn btn-outline-light auth-buttons btn-floating m-1" role="button"
-                                        ><FaGoogle /></Link>
-
-                                        <Link class="btn btn-outline-light auth-buttons btn-floating m-1" to="/#" role="button"
-                                        ><FaGithub /></Link>
-                                    </section>
+                                    <SocialAuth></SocialAuth>
                                 </div>
 
                             </form>

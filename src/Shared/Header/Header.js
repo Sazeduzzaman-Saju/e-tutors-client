@@ -10,11 +10,14 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Switch from '@mui/material/Switch';
 
 
-const Header = () => {
+
+const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const Header = ({ check, change }) => {
+
     const { user, logout } = useContext(AuthContext);
-
 
     const logOut = () => {
         logout()
@@ -25,13 +28,16 @@ const Header = () => {
         <Tooltip id="button-tooltip" {...props}>
             {user?.displayName}
         </Tooltip>)
+
+    const darkMode = () => {
+        alert('')
+    }
     return (
 
         <>
-
             <div className='container-fluid top-banner'>
-                <div className='container-fluid'>
-                    <div className='row d-flex justify-content-center align-content-center'>
+                <div className='container'>
+                    <div className='row d-flex justify-content-center align-items-center'>
                         <div className='col '>
                             <p>Keep learning with free resources</p>
                         </div>
@@ -43,8 +49,9 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <Nav.Link as={Link} className='ms-3 btns' to="/login">
-                                            <FaSignInAlt /><span className='ms-2 '><button className="btns">Login</button></span></Nav.Link>
+                                        <Nav.Link as={Link} className='ms-3' to="/login">
+                                            <FaSignInAlt />
+                                            <span className='ms-2 '>Login</span></Nav.Link>
                                     </>
                                 }
                             </Link>
@@ -57,21 +64,17 @@ const Header = () => {
                                             style={{ height: '40px', width: '40px' }}
                                             roundedCircle
                                             src={user.photoURL}>
-
                                         </Image>
                                         :
                                         <FaUser></FaUser>
                                     }
                                 </Link></OverlayTrigger>
-
-
                         </div>
                     </div>
                 </div>
             </div>
             <div className='container-fluid shadow-lg navigation-area'>
                 <Navbar bg="white" expand="lg">
-
                     <Container className='' bg="primary" >
                         <Navbar.Brand href="#">
                             <img src={logo} alt="" />
@@ -87,7 +90,7 @@ const Header = () => {
                                 <Nav.Link as={NavLink} to="/courses">Courses</Nav.Link>
                                 <Nav.Link as={NavLink} to="/faq">FAQ</Nav.Link>
                                 <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
-
+                                <Switch onChange={ change} checked={check } {...label} />
                             </Nav>
                             <div>
                                 {user?.uid ?
@@ -101,7 +104,6 @@ const Header = () => {
                                         </Nav.Link>
                                     </>
                                 }
-
                             </div>
                         </Navbar.Collapse>
                     </Container>

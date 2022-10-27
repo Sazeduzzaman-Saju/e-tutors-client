@@ -7,7 +7,7 @@ const DetailsTab = ({ courseDetails }) => {
     const { overview, requirements, who_is_this_course_for } = courseDetails;
     return (
         <div>
-            <div className="container mb-5">
+            <div className="container mb-5" data-aos="fade-left" data-aos-duration="3000">
                 <Tabs
                     defaultActiveKey="profile"
                     id="fill-tab-example"

@@ -10,16 +10,16 @@ const Footer = () => {
 
                 <section class="mb-4">
 
-                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    <Link class="btn btn-outline-light btn-floating m-1" to="https://facebook.com/" role="button"
                     ><FaFacebook /></Link>
 
-                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    <Link class="btn btn-outline-light btn-floating m-1" to="https://instagram.com/" role="button"
                     ><FaInstagram /></Link>
 
-                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    <Link class="btn btn-outline-light btn-floating m-1" to="https://twitter.com/" role="button"
                     ><FaTwitter /></Link>
 
-                    <Link class="btn btn-outline-light btn-floating m-1" to="/#" role="button"
+                    <Link class="btn btn-outline-light btn-floating m-1" to="https://github.com/" role="button"
                     ><FaGithub /></Link>
                 </section>
 

@@ -15,11 +15,11 @@ const CourseSideInfo = ({ courseDetails }) => {
 
     return (
         <div>
-            <Card className="mt-5 mb-5">
+            <Card className="mt-5 mb-5" data-aos="fade-left" data-aos-duration="3000">
                 <Card.Img variant="top" src={image} />
-                <Card.Body>
+                <Card.Body data-aos="fade-left" data-aos-duration="3000">
                     <div className="d-flex justify-content-between align-items-center mb-3">
-                        <span> <strong className='fs-2'>${latest_price}</strong> <del>${before_price}</del></span>
+                        <span> <strong className='fs-2 blueviolet'>${latest_price}</strong> <del>${before_price}</del></span>
                         <p>Offer for today</p>
                     </div>
                     <di className="d-flex justify-content-between">
@@ -39,12 +39,12 @@ const CourseSideInfo = ({ courseDetails }) => {
                         <div><p>{access_time}</p></div>
                     </di>
                     <Card.Text>
-                        {short_desc}
+                        {short_desc.slice(0, 300)}
                     </Card.Text>
                     <div className='d-flex justify-content-center'>
 
 
-                        <Link to={`/checkout/${catId}`}>button</Link>
+                        <Link to={`/checkout/${catId}`}><button className='btns'>Buy View Course</button></Link>
 
                     </div>
                 </Card.Body >

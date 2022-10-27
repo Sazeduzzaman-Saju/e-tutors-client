@@ -3,3 +3,11 @@
   justify-content: center;
   align-items: center;
 }
+.errors-area {
+  border: 5px solid blueviolet;
+  border-radius: 5px;
+  margin-bottom: -5px;
+}
+.errors-areas {
+  border-bottom: 10px solid blueviolet;
+}
